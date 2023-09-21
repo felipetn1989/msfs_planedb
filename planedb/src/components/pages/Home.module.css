@@ -1,0 +1,7 @@
+main {
+  min-height: 85vh;
+  background-image: url("../../assets/images/homeBg4.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom;
+}
