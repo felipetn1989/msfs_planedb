@@ -1,0 +1,13 @@
+header {
+  padding: 4rem;
+  background-image: url("../../assets/images/headerBg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+}
+
+.menuLayoutDiv {
+    background-color: #018BC7;
+    transition: 0.5s;
+}
+
