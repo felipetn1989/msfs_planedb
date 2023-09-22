@@ -1,5 +1,6 @@
-main {
-  background-image: url("../../assets/images/homeBg3.webp");
+.planesMain {
+  min-height: 85vh;
+  background-image: url("../../assets/images/homeBg4.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} 
