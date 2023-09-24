@@ -26,7 +26,10 @@ const Header = (props: Props) => {
   return (
     <header className={`${styles.header} relative`}>
       <div className={"max-w-[60rem] m-auto space-y-6"}>
-        <img className="max-w-xs w-full" src={MSFSLogo} alt="MSFS Logo" />
+        <div className="flex flex-col items-center space-y-4 justify-between lg:flex-row">
+          <img className="max-w-xs w-full" src={MSFSLogo} alt="MSFS Logo" />
+          <h1 className="text-white font-bold text-xl uppercase">Plane Database</h1>
+        </div>
         <nav className="text-center m-auto bg-black text-white absolute left-0 bottom-0 w-full p-0.5">
           <ul className="flex gap-8 justify-center md:justify-around max-w-[60rem] m-auto italic">
             {menuItems.map((item, index) => (

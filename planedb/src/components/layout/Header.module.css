@@ -1,9 +1,6 @@
 header {
   padding: 4rem;
-  background-image: url("../../assets/images/headerBg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center right;
+  background-color: black;
 }
 
 .menuLayoutDiv {

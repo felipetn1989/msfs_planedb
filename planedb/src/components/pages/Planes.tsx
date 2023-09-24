@@ -14,22 +14,14 @@ import styles from "./Planes.module.css";
 // react-router-dom
 
 import { useState } from "react";
+import PlaneData from "../layout/PlaneData";
+import { ISelectedPlane } from "../interfaces/ISelectedPlane";
 
 type Props = {};
 
 const Planes = (props: Props) => {
   const [showPlaneInfo, setShowPlaneInfo] = useState<boolean>(false);
-  const [selectedPlane, setSelectedPlane] = useState<any>();
-  const [selectedChart, setSelectedChart] = useState<number | null>(null);
-
-  const dataCategories = [
-    "Airspeed Limitations",
-    "Takeoff Distance",
-    "Rate of Climb",
-    "Climb Chart",
-    "Cruise Perfomance",
-    "Landing Distance",
-  ];
+  const [selectedPlane, setSelectedPlane] = useState<ISelectedPlane>();
 
   function handlePlaneSelection(id: string) {
     setShowPlaneInfo(true);
@@ -44,8 +36,13 @@ const Planes = (props: Props) => {
       planeModel: "C152",
       planeName: "Cessna 152",
       poh: "https://args.com.br/arquivos/biblioteca/1/web/c152-cessna-152-manual.pdf",
-      vSpeeds: "../../../public/images/C152/airspeedLimitations.png",
-      takeoffDistance: "../../../public/images/C152/takeoffDistance.png",
+      "Airspeed Limitations":
+        "../../../public/images/C152/airspeedLimitations.png",
+      "Takeoff Distance": "../../../public/images/C152/takeoffDistance.png",
+      "Rate of Climb": "../../../public/images/C152/rateOfClimb.png",
+      "Climb Chart": "../../../public/images/C152/climbChart.png",
+      "Cruise Performance": "../../../public/images/C152/cruisePerformance.png",
+      "Landing Distance": "../../../public/images/C152/landingDistance.png",
     },
     {
       id: "2",
@@ -98,58 +95,27 @@ const Planes = (props: Props) => {
           </>
         )}
         {showPlaneInfo && (
-          <>
-            <div className="flex justify-between border-b border-white pb-8">
-              <h2 className="text-white uppercase border border-white text-3xl p-2 w-fit">
-                {selectedPlane.planeName}
+          <div className="text-white w-full">
+            <div className="flex justify-between border-b pb-8">
+              <h2 className="uppercase border text-3xl p-2 w-fit">
+                {selectedPlane!.planeName}
               </h2>
               <button
-                className="text-white uppercase border border-white text-3xl p-2 w-fit"
+                className="uppercase border text-3xl p-2 w-fit "
                 onClick={() => setShowPlaneInfo(false)}
               >
                 Back
               </button>
             </div>
-            <div className="border-b py-8 border-white">
-              <button className="text-white uppercase border border-white text-3xl p-2 w-fit">
-                <a href={selectedPlane.poh} target="blank">
+            <div className="border-b py-8">
+              <button className="uppercase border border-white text-3xl p-2 w-fit">
+                <a href={selectedPlane!.poh} target="blank">
                   Pilot's Operating Handbook
                 </a>
               </button>
             </div>
-            <div className="border-b border-white py-8">
-              <div className="grid grid-cols-2 gap-8">
-                {dataCategories.map((category, index) => (
-                  <button
-                    className={`text-white uppercase border border-white text-3xl p-2 w-fit ${
-                      index % 2 ? "place-self-end" : ""
-                    }`}
-                    onClick={() =>
-                      selectedChart === index + 1
-                        ? setSelectedChart(null)
-                        : setSelectedChart(index + 1)
-                    }
-                  >
-                    {selectedChart === index + 1 ? "Close" : `${category}`}
-                  </button>
-                ))}
-              </div>
-              {selectedChart === 1 && (
-                <img
-                  src={selectedPlane.vSpeeds}
-                  alt="Airspeed Limitations"
-                  className="mt-8"
-                />
-              )}
-              {selectedChart === 2 && (
-                <img
-                  src={selectedPlane.takeoffDistance}
-                  alt="Takeoff Distance"
-                  className="mt-8"
-                />
-              )}
-            </div>
-          </>
+            <PlaneData selectedPlane={selectedPlane} />
+          </div>
         )}
       </div>
     </main>

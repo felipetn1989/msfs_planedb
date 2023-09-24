@@ -1,6 +1,7 @@
 .planesMain {
   min-height: 85vh;
-  background-image: url("../../assets/images/homeBg4.jpeg");
+  background-image: url("../../assets/images/homeBg8.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center bottom;
 } 

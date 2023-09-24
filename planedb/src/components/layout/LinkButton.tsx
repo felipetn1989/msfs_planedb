@@ -9,9 +9,11 @@ type Props = {
 
 const LinkButton = ({ to, btnText }: Props) => {
   return (
-    <button className="border border-white text-white px-4 py-2 hover:bg-white hover:text-black">
-      <Link to={to}>{btnText}</Link>
-    </button>
+    <Link to={to}>
+      <button className="border border-white text-white px-4 py-2 hover:bg-white hover:text-black">
+        {btnText}
+      </button>
+    </Link>
   );
 };
 

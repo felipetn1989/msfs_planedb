@@ -7,7 +7,7 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <main className={`${styles.homeMain} p-8 flex flex-col items-center homePage`}>
+    <main className={`${styles.homeMain} p-8 flex flex-col items-center homePage max-w-[100rem] m-auto`}>
       <div className="max-w-[60rem] h-full text-white m-auto space-y-4">
         <h1 className="text-left font-bold text-5xl">
           MSFS Nav and Plane database
