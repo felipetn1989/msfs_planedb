@@ -122,7 +122,7 @@ const Planes = (props: Props) => {
                 {dataCategories.map((category, index) => (
                   <button
                     className={`text-white uppercase border border-white text-3xl p-2 w-fit ${
-                      index % 2 !== 0 ? "place-self-end" : ""
+                      index % 2 ? "place-self-end" : ""
                     }`}
                     onClick={() =>
                       selectedChart === index + 1
