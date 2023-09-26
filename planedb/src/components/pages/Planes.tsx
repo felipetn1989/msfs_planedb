@@ -82,7 +82,7 @@ const Planes = (props: Props) => {
                         className="w-[100vw] lg:h-[35rem] object-cover"
                       />
                       <div
-                        className="absolute bottom-8 left-8 text-white bg-black uppercase border border-white p-2"
+                        className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-bold text-5xl lg:text-7xl uppercase text-center ${styles.caption}`}
                         onClick={() => handlePlaneSelection(image.id)}
                       >
                         {image.planeName}

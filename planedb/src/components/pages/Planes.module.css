@@ -4,4 +4,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
-} 
+}
+
+.caption {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-text-stroke: 4px;
+  -webkit-text-fill-color: transparent;
+}
